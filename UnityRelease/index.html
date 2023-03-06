@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | 3D Gallery</title>
+    <title>Unity WebGL Player | AIA-HallOfFame</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">3D Gallery</div>
+        <div id="unity-build-title">AIA-HallOfFame</div>
       </div>
     </div>
     <script>
@@ -58,12 +58,12 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/UnityRelease.loader.js";
       var config = {
-        dataUrl: buildUrl + "/UnityRelease.data.unityweb",
-        frameworkUrl: buildUrl + "/UnityRelease.framework.js.unityweb",
-        codeUrl: buildUrl + "/UnityRelease.wasm.unityweb",
+        dataUrl: buildUrl + "/UnityRelease.data",
+        frameworkUrl: buildUrl + "/UnityRelease.framework.js",
+        codeUrl: buildUrl + "/UnityRelease.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "3D Gallery",
+        productName: "AIA-HallOfFame",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
@@ -83,11 +83,13 @@
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
+
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
 
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
